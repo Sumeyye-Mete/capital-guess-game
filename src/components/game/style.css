@@ -1,0 +1,101 @@
+/*-----------------------------------------------------------------*/
+/*                       ALERT STYLES                              */
+/*-----------------------------------------------------------------*/
+div.bg-image {
+	background-color: rgba(255, 255, 255, 0.7);
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	z-index: 3;
+}
+
+div.bg-text {
+	color: rgb(54, 202, 54);
+	font-size: 3rem;
+	text-shadow: 0 0 10px white;
+	font-weight: bold;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	animation-name: alert;
+	animation-duration: 2s;
+	transform: translateY(-50%);
+}
+.last-alert {
+	animation-fill-mode: forwards;
+}
+
+@keyframes alert {
+	from {
+		transform: translateY(-50%) scale(1);
+	}
+	to {
+		transform: translateY(-50%) scale(2);
+	}
+}
+
+/*-----------------------------------------------------------------*/
+/*                       other game card STYLES                              */
+/*-----------------------------------------------------------------*/
+.infoContainer {
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+	right: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+button.info {
+	background: orange !important;
+}
+button.countryName {
+	text-transform: uppercase;
+	width: fit-content;
+	background: black !important;
+}
+input.inputText {
+	text-transform: uppercase;
+	border: 3px white solid;
+	box-shadow: 0 0 10px gray;
+	border-radius: 2rem;
+	text-align: center;
+	padding: 1rem 2rem;
+	font-size: 3rem;
+	background: black;
+	color: white;
+}
+input.inputText::placeholder {
+	color: rgba(245, 245, 245, 0.661);
+}
+div.gameContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+	height: 70%;
+}
+div.gameCard {
+	justify-content: end;
+}
+
+@media screen and (max-width: 576px) {
+	button.info {
+		width: 150px;
+		height: 60px;
+		border-radius: 1.5rem;
+		font-size: 1rem;
+	}
+	input.inputText {
+		border-radius: 1.5rem;
+		padding: 1rem 1rem;
+		font-size: 2rem;
+	}
+}
