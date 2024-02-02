@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { getCountries } from "../api/countries";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const correct = "correct";
 const wrong = "wrong";
@@ -104,9 +104,7 @@ const Game = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [time]);
 
-	useEffect(()=>{
-
-	},[])
+	useEffect(() => {}, []);
 
 	// events
 	const handleClick = () => {
@@ -169,7 +167,9 @@ const Game = () => {
 						<Button onClick={handleClick} disabled={sumi.current}>
 							Guess
 						</Button>
-						<Button variant="danger">Exit</Button>
+						<Button as={Link} to="/" variant="danger">
+							Exit
+						</Button>
 					</div>
 				</div>
 			</Card>
